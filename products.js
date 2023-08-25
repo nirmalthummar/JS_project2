@@ -110,9 +110,25 @@ console.log(uniqvalues)
 
 let button = uniqvalues.map(function(value) {
 
-  return `<button class="company-btn" id="com">${value}</button>`
+  return `<button class="company-btn" id="com" onclick="filter('${value}')">${value}</button>`
 })
 
+
+
+
+
+function filter(cat)
+{
+    let filterData= products.filter(function(value) {
+
+
+       return value.company == cat;
+   
+
+    });
+
+    display(filterData)
+}
 
 document.getElementById("com").innerHTML = button.join("");
 
